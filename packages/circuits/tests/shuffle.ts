@@ -33,6 +33,8 @@ describe('Shuffle encrypt/decrypt benchmark tests', function () {
     // Initializes deck.
     const initializedDeck: bigint[] = initDeck(babyjub, Number(numCards));
     let compressedDeck = compressDeck(initializedDeck);
+
+    // 牌桌上面的牌转化成deck.原始的牌经过加密后压缩
     let deck: {
       X0: bigint[],
       X1: bigint[],
@@ -42,8 +44,9 @@ describe('Shuffle encrypt/decrypt benchmark tests', function () {
       X1: compressedDeck.X1,
       selector: compressedDeck.selector,
     };
-
+    // A为置换矩阵
     let A = samplePermutation(Number(numCards));
+    // R为私密数据
     let R = sampleFieldElements(babyjub, numBits, numCards);
     let deckDelta = recoverDeck(babyjub, deck.X0, deck.X1);
     let plaintext_output = shuffleEncryptV2Plaintext(

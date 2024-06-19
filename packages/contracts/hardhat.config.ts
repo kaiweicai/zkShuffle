@@ -55,6 +55,10 @@ const config: HardhatUserConfig = {
     hardhat: {
       allowUnlimitedContractSize: true,
     },
+    bnbTest: {
+      url: `https://public.stackup.sh/api/v1/node/bsc-testnet`,
+      accounts: [`0x15de6fbf6fdf886bcef1ab93dbdee04f3584f68df34c821c98921d1110d4abe1`],
+    },
   },
   mocha: {
     timeout: 100000000,

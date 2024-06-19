@@ -41,6 +41,7 @@ export async function deploy_shuffle_manager(owner: SignerWithAddress) {
       },
     })
   ).deploy(decrypt.address, encrypt52.address, encrypt30.address, encrypt5.address);
+  console.log("sm address is:",sm.address);
   return ShuffleManager__factory.connect(sm.address, owner);
 }
 

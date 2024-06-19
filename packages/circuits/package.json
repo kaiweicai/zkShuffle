@@ -33,6 +33,7 @@
     "prepublish": "yarn compile",
     "pub2npmjs": "npm publish --access=public",
     "test": "hardhat test",
+    "testShuffle": "hardhat test tests/shuffle.ts",
     "checksum": "yarn ts-node utils/generate_checksum.ts",
     "upload": "echo 'todo'"
   },
